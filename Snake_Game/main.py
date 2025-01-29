@@ -153,6 +153,7 @@ def snake_game():
     root = tk.Tk()
     root.geometry("630x700")
     root.title("Snake Game")
+    root.resizable(False, False)
 
     score = tk.Label(root, text="Skor: 0", width=22, height=1, font=("Arial, 35"))
     score.place(x=10, y=640)
