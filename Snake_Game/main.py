@@ -3,7 +3,7 @@ import random
 
 
 def update_score(snake, score):
-    score["text"] = f"Skor: {len(snake) - 1}"
+    score["text"] = f"Score: {len(snake) - 1}"
 
 
 def control_collision(canvas, snake):
@@ -12,15 +12,15 @@ def control_collision(canvas, snake):
             if canvas.coords(snake[body_part]) == canvas.coords(snake[len(snake) - 1]):
                 game_over = tk.Label(root, text="GAME OVER", width=21, height=12, bg="black", fg="red", font=("Arial, 40"))
                 game_over.place(x=0, y=0)
-                end_score = tk.Label(root, text=f"Skor: {len(snake) - 1}", width=5, height=1, bg="black", fg="red", font=("Arial, 20"))
-                end_score.place(x=285, y=280)
+                end_score = tk.Label(root, text=f"Score: {len(snake) - 1}", width=10, height=1, bg="black", fg="red", font=("Arial, 20"))
+                end_score.place(x=245, y=280)
     
     coords = canvas.coords(snake[len(snake) - 1])
     if coords[0] >= 630 or coords[0] < 0 or coords[1] >= 630 or coords[1] < 0:
         game_over = tk.Label(root, text="GAME OVER", width=21, height=12, bg="black", fg="red", font=("Arial, 40"))
         game_over.place(x=0, y=0)
-        end_score = tk.Label(root, text=f"Skor: {len(snake) - 1}", width=5, height=1, bg="black", fg="red", font=("Arial, 20"))
-        end_score.place(x=285, y=280)
+        end_score = tk.Label(root, text=f"Score: {len(snake) - 1}", width=10, height=1, bg="black", fg="red", font=("Arial, 20"))
+        end_score.place(x=245, y=280)
 
 
 def create_food(canvas, snake, food):
