@@ -36,6 +36,7 @@ def place_circle(red_turn, mouse_x, colour_code):
 def check_win(colour_code):
     global matrix
 
+    is_full = True
     for row in range(6):
         for column in range(7):
             if matrix[row][column] == colour_code:
@@ -52,20 +53,31 @@ def check_win(colour_code):
                     if matrix[row + 1][column - 1] == colour_code and matrix[row + 2][column - 2] == colour_code and matrix[row + 3][column - 3] == colour_code:
                         return f"Player {colour_code}", True
 
-    return "Nobody", False
+            if matrix[row][column] == 0:
+                is_full = False
+
+    return "Nobody", is_full
 
 
 def end_game(winner):
     global screen
 
     if winner == "Player 1":
+        text = "Player 1 Won!"
         colour = (255, 0, 0)
-    else:
+        text_x = 125
+    elif winner == "Player 2":
+        text = "Player 2 Won!"
         colour = (255, 255, 0)
+        text_x = 125
+    else:
+        text = "Tie"
+        colour = (255, 255, 255)
+        text_x = 300
 
     font = pygame.font.Font(None, 100)
-    text = font.render(f"{winner} Won!", True, colour)
-    screen.blit(text, (125, 20))
+    text = font.render(f"{text}", True, colour)
+    screen.blit(text, (text_x, 20))
 
 
 def Connect_4():
