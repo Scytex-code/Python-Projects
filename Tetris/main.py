@@ -20,7 +20,6 @@ def draw_board():
         pygame.draw.line(screen, (100, 100, 100), (TOP_LEFT_X + (column * BLOCK_SIZE), TOP_LEFT_Y), (TOP_LEFT_X + (column * BLOCK_SIZE), TOP_LEFT_Y + BOARD_HEIGHT))
 
     pygame.draw.rect(screen, (255, 0, 0), (TOP_LEFT_X, TOP_LEFT_Y, BOARD_WIDTH + 1, BOARD_HEIGHT), 4)
-    pygame.draw.rect(screen, (0, 0, 0), (0, 0, SCREEN_WIDTH, SCREEN_HEIGHT - BOARD_HEIGHT))
     
     tetris_font = pygame.font.Font(None, 100)
     text = tetris_font.render("TETRIS", True, (255, 255, 255))
