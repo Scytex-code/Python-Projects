@@ -518,7 +518,7 @@ def tetris():
     start_loop()
 
     TIMER_EVENT = pygame.USEREVENT + 1
-    pygame.time.set_timer(TIMER_EVENT, 1000)
+    pygame.time.set_timer(TIMER_EVENT, 400)
 
     blocks = ["S", "Z", "I", "O", "J", "L", "T"]
     block_queue = [random.choice(blocks), random.choice(blocks)]
